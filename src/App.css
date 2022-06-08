@@ -1,38 +1,144 @@
-.App {
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+body {
+  margin: 0px;
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgb(34, 38, 41) !important;
+}
+
+div {
+  display: block;
+}
+
+a:-webkit-any-link {
+
+  cursor: pointer;
+
+}
+
+a:-webkit-any-link :hover {
+  color: rgb(255, 255, 255);
+}
+
+.App-margin {
+  margin: 20px auto 0px;
+  width: 85%;
+  max-width: 700px;
+  min-height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.App-context {
+  flex: 1 1 0%;
+}
+
+.App-headline {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+.App-heading {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App-logo-context {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.App-title {
+  margin-left: 12px;
+  margin-top: 26.8px;
+  margin-bottom: 26.8px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.App-box {
+  padding: 10px 0;
+  background: rgb(46, 49, 51);
+}
+
+.padding-top-left-right-20 {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.input-text {
+  padding: 12px 12px;
+  margin: 6px 0;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 85%;
+  box-sizing: border-box;
+  background-color: rgb(34, 38, 41);
+  font-size: 15px;
+}
+
+.add-todo-button {
+  padding: 12px;
+  margin: 10px 0;
+  border: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: rgb(23, 143, 230);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+.welcome-block {
+  margin-top: 40px;
+  margin-left: 99px;
+  margin-bottom: 20px;
+  margin-right: 99px;
+  text-align: center;
+  opacity: 0.5;
+  color: rgb(255, 255, 255);
+}
+
+.workdesk-img {
+  margin: 30px;
+  text-align: center;
+  width: 264px;
+}
+
+
+.git-link {
+  margin: 10px 0;
+  color: rgb(255, 255, 255);
+  opacity: 0.5;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-align-center {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
