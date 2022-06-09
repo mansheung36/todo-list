@@ -1,4 +1,5 @@
 import './App.css';
+import TodoButton from './TodoButton';
 
 
 function App() {
@@ -21,10 +22,7 @@ function App() {
 
           <div className='App-box rounded'>
 
-            <div class="padding-top-left-right-20">
-              <input type="text" className="input-text " placeholder="Add New Item here (Eg. Implement Dark Mode)" />
-              <button class="add-todo-button" type="button" >Add Todo</button>
-            </div>
+            <TodoButton />
 
 
             <div mode="dark" className='margin-20'>
