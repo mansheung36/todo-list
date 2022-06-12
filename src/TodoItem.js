@@ -1,18 +1,25 @@
 import React from 'react'
 
-export default function TodoItem({ content }) {
+
+
+
+export default function TodoItem({  todo, handleDeleteTodo }) {
     return (
-        <div>
-
-            <div className="card" style={{ margin: "20px 0" }}>
-
-                <div className="card-body">
-                    <p className="card-text">{content}</p>
 
 
-                </div>
+        <li className=" todo-item row " data-todo-id={todo.id} >
+
+
+            <div className=" col-8 todo-content" >{todo.content}</div>
+            <div className='col-1'>
+                <img src='	https://stickylist.app/img/trash-light.svg' onClick={() => { handleDeleteTodo(todo.id) }} />
             </div>
 
-        </div>
+
+
+
+
+        </li>
+
     )
 }
