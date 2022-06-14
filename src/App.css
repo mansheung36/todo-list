@@ -171,3 +171,12 @@ a:-webkit-any-link :hover {
   padding: 0 !important;
   
 }
+
+.trash-img {
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.trash-img:hover  {
+  opacity: 1 ;
+}

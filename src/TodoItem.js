@@ -12,7 +12,7 @@ export default function TodoItem({  todo, handleDeleteTodo }) {
 
             <div className=" col-8 todo-content" >{todo.content}</div>
             <div className='col-1'>
-                <img src='	https://stickylist.app/img/trash-light.svg' onClick={() => { handleDeleteTodo(todo.id) }} />
+                <img src='	https://stickylist.app/img/trash-light.svg' className='trash-img' onClick={() => { handleDeleteTodo(todo.id) }} />
             </div>
 
 
