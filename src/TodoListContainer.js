@@ -43,13 +43,33 @@ export default function TodoListContainer() {
 
         setCompletedItems(
             [
-                completed
-                ,
-                ...completedItems
+                completed,
+                ...completedItems,
             ]
         )
 
         setTodos(todos.filter(todo => todo.id !== id));
+    }
+
+    const handleCompletedItemClick = id => {
+        let backwardItem;
+        completedItems.map(
+            completedItem => {
+                if (completedItem.id === id) {
+                    backwardItem = completedItem;
+                }
+            }
+        )
+
+        setTodos(
+            [
+                backwardItem,
+                ...todos,
+            ]
+        )
+
+        setCompletedItems(completedItems.filter(completedItem => completedItem.id !== id));
+
     }
 
 
@@ -75,7 +95,7 @@ export default function TodoListContainer() {
                 <ul className='todo-list-item' >
 
                     {
-                        completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} />)
+                        completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick}/>)
                     }
                 </ul>
             </div>
