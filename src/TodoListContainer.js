@@ -72,13 +72,25 @@ export default function TodoListContainer() {
 
     }
 
+    const handleKeyDown = e => {
+        if (e.key === 'Enter'){
+            setTodos([
+                {
+                    id: id.current,
+                    content: inputValue
+                }, ...todos]);
+            setInputValue('');
+            id.current++
+        };
+    }
+
 
     return (
 
 
         <div >
             <div className='padding-top-left-right-20'>
-                <input type="text" className="input-text " placeholder="Add New Item here (Eg. Implement Dark Mode)" value={inputValue} onChange={handleInputChange} />
+                <input type="text" className="input-text " placeholder="Add New Item here (Eg. Implement Dark Mode)" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown}/>
                 <button class="add-todo-button" type="button" onClick={handleButtonClick} >Add Todo</button>
             </div>
 
