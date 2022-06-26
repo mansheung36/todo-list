@@ -75,10 +75,10 @@ export default function TodoListContainer() {
     }
 
     function addItem() {
-        if (inputValue.length == 0) {
+        if (inputValue.length === 0) {
             setShowEmptyStatement(true);
             return;
-        } 
+        }
 
         setShowEmptyStatement(false);
         setTodos([
@@ -124,6 +124,23 @@ export default function TodoListContainer() {
                     }
                 </ul>
             </div>
+
+            {(todos.length === 0 && completedItems.length === 0) &&
+
+                < div className='margin-20' >
+
+                    <div className='welcome-block'>
+                        Welcome to your StickyList.<br />
+                        <br />
+                        You have no items on the list. Add some items to your sticky list and stay focussed.<br />
+                    </div>
+
+                    <div className='text-align-center'>
+                        <img className='workdesk-img' src='	https://stickylist.app/img/workdesk-dark.png'></img>
+                    </div>
+
+                </div >
+            }
 
         </div>
 
