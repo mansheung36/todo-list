@@ -180,3 +180,11 @@ a:-webkit-any-link :hover {
 .trash-img:hover  {
   opacity: 1 ;
 }
+
+.empty-todo-strings {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  color: red;
+  font-size: 0.7rem;
+}

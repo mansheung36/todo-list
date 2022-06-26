@@ -11,16 +11,12 @@ export default function TodoListContainer() {
 
     const [inputValue, setInputValue] = useState('');
 
+    const [showEmptyStatement, setShowEmptyStatement] = useState(false)
+
     const id = useRef(1)
 
     const handleButtonClick = () => {
-        setTodos([
-            {
-                id: id.current,
-                content: inputValue
-            }, ...todos]);
-        setInputValue('');
-        id.current++
+        addItem();
     }
 
     const handleInputChange = (e) => {
@@ -73,25 +69,42 @@ export default function TodoListContainer() {
     }
 
     const handleKeyDown = e => {
-        if (e.key === 'Enter'){
-            setTodos([
-                {
-                    id: id.current,
-                    content: inputValue
-                }, ...todos]);
-            setInputValue('');
-            id.current++
+        if (e.key === 'Enter') {
+            addItem();
         };
     }
 
+    function addItem() {
+        if (inputValue.length == 0) {
+            setShowEmptyStatement(true);
+            return;
+        } 
+
+        setShowEmptyStatement(false);
+        setTodos([
+            {
+                id: id.current,
+                content: inputValue
+            }, ...todos]);
+        setInputValue('');
+        id.current++;
+    }
 
     return (
 
 
         <div >
             <div className='padding-top-left-right-20'>
-                <input type="text" className="input-text " placeholder="Add New Item here (Eg. Implement Dark Mode)" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown}/>
+                <input type="text" className="input-text " placeholder="Add New Item here (Eg. Implement Dark Mode)" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown} />
                 <button class="add-todo-button" type="button" onClick={handleButtonClick} >Add Todo</button>
+            </div>
+
+            <div className='empty-todo-strings'>
+                {(showEmptyStatement) &&
+                    <div>
+                        Please don't add nothing to your list. Try adding something. (Pro-Tip: If you still want to add nothing, use an empty space)
+                    </div>
+                }
             </div>
 
             <div className='todo-list' >
@@ -107,7 +120,7 @@ export default function TodoListContainer() {
                 <ul className='todo-list-item' >
 
                     {
-                        completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick}/>)
+                        completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick} />)
                     }
                 </ul>
             </div>
