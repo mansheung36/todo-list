@@ -13,6 +13,8 @@ export default function TodoListContainer() {
 
     const [showEmptyStatement, setShowEmptyStatement] = useState(false)
 
+    const [showCompletedItems, setShowCompletedItems] = useState(false)
+
     const id = useRef(1)
 
     const handleButtonClick = () => {
@@ -90,6 +92,10 @@ export default function TodoListContainer() {
         id.current++;
     }
 
+    const handleShowCompletedItem = () => {
+        setShowCompletedItems(!showCompletedItems)
+    }
+
     return (
 
 
@@ -116,13 +122,20 @@ export default function TodoListContainer() {
                 </ul>
             </div>
 
-            <div className='todo-list' >
-                <ul className='todo-list-item' >
+            <div className='margin-20'>
+                <div className='completed-todos-title'>
+                    <span>COMPLETED TODOS()</span>
+                    <button onClick={handleShowCompletedItem}>{ (showCompletedItems) ? 'hide' : 'show'  }</button>
+                </div>
+            
+                { showCompletedItems &&
+                    <ul className='todo-list-item' >
 
                     {
                         completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick} />)
                     }
                 </ul>
+                }
             </div>
 
             {(todos.length === 0 && completedItems.length === 0) &&
