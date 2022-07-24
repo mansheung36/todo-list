@@ -195,6 +195,39 @@ a:-webkit-any-link :hover {
   margin-bottom: 16px;
   justify-content: space-between;
   display: flex;
+  color: rgb(255, 255, 255);
+  opacity: 0.2 ;
+  font-weight: bold;
 }
 
+.hide-show-button {
+  background-color: transparent;
+  color: #e7e7e7;
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+}
 
+.empty-todo-block {
+  margin-left: 99px;
+  margin-bottom: 20px;
+  margin-right: 99px;
+  text-align: center;
+  opacity: 0.5;
+  color: rgb(255, 255, 255);
+}
+
+.sleep-read-dark-img {
+  
+}
+
+.sleep-dark-img {
+  width: 248px;
+  height: 81.469px;
+  margin: 60px 30px 0px 30px;
+}
+
+.read-dark-img {
+  width: 248px;
+  height: 143.391px;
+  margin: 30px;
+}

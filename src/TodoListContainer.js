@@ -15,6 +15,8 @@ export default function TodoListContainer() {
 
     const [showCompletedItems, setShowCompletedItems] = useState(false)
 
+
+
     const id = useRef(1)
 
     const handleButtonClick = () => {
@@ -27,6 +29,10 @@ export default function TodoListContainer() {
 
     const handleDeleteTodo = id => {
         setTodos(todos.filter(todo => todo.id !== id));
+    }
+
+    const handleDeleteCompeleted = id => {
+        setCompletedItems(completedItems.filter(completedItems => completedItems.id !== id));
     }
 
     const handleCompletedTodo = id => {
@@ -96,6 +102,9 @@ export default function TodoListContainer() {
         setShowCompletedItems(!showCompletedItems)
     }
 
+
+
+
     return (
 
 
@@ -122,21 +131,37 @@ export default function TodoListContainer() {
                 </ul>
             </div>
 
-            <div className='margin-20'>
-                <div className='completed-todos-title'>
-                    <span>COMPLETED TODOS()</span>
-                    <button onClick={handleShowCompletedItem}>{ (showCompletedItems) ? 'hide' : 'show'  }</button>
+            {(todos.length === 0 && completedItems.length !== 0) &&
+                <div className='margin-20'>
+                    <div className='empty-todo-block'>
+                        Great job checking off your list.<br />
+                        Time to catch some zzzz or read some books?
+                    </div >
+                    <div className='sleep-read-dark-img'>
+                        <img className='sleep-dark-img' src='https://stickylist.app/img/sleep-dark.png'></img>
+                        <img className='read-dark-img' src='https://stickylist.app/img/read-dark.png'></img>
+                    </div>
                 </div>
-            
-                { showCompletedItems &&
-                    <ul className='todo-list-item' >
+            }
 
-                    {
-                        completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick} />)
+            {completedItems.length !== 0 &&
+
+                <div className='margin-20'>
+                    <div className='completed-todos-title' >
+                        <span>COMPLETED TODOS({completedItems.length})</span>
+                        <button onClick={handleShowCompletedItem} className='hide-show-button'>{(showCompletedItems) ? 'hide' : 'show'}</button>
+                    </div>
+
+                    {showCompletedItems &&
+                        <ul className='todo-list-item' >
+
+                            {
+                                completedItems.map(completedItem => <CompletedItem key={completedItem.id} completedItem={completedItem} handleCompletedItemClick={handleCompletedItemClick} handleDeleteCompeleted={handleDeleteCompeleted} />)
+                            }
+                        </ul>
                     }
-                </ul>
-                }
-            </div>
+                </div>
+            }
 
             {(todos.length === 0 && completedItems.length === 0) &&
 
