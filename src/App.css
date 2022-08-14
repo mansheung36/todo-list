@@ -8,11 +8,27 @@ h1 {
   font-weight: bold;
 }
 
+body.dark{
+  --background-color: rgb(34, 38, 41);
+  --color: rgb(255, 255, 255);
+  --app-box-background-color: rgb(46, 49, 51);
+  --todo-item-background-color: rgb(57, 59, 61);
+  --trash-img-filter: brightness(30%);
+}
+
+body.light{
+  --background-color: rgb(255, 255, 255);
+  --color: rgb(34, 38, 41);
+  --app-box-background-color: rgb(242, 245, 247);
+  --todo-item-background-color: rgb(255, 255, 255);
+  --trash-img-filter: brightness(90%);
+}
+
 body {
   margin: 0px;
   font-family: "IBM Plex Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: rgb(34, 38, 41) !important;
+  background-color: var(--background-color) !important;
 }
 
 div {
@@ -20,13 +36,11 @@ div {
 }
 
 a:-webkit-any-link {
-
-  cursor: pointer;
-
+  cursor: pointer;  
 }
 
 a:-webkit-any-link :hover {
-  color: rgb(255, 255, 255);
+  color: var(--color);
 }
 
 .App-margin {
@@ -50,7 +64,7 @@ a:-webkit-any-link :hover {
   justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
-  color: rgb(255, 255, 255);
+  color: var(--color);
 }
 
 .App-heading {
@@ -78,7 +92,7 @@ a:-webkit-any-link :hover {
 
 .App-box {
   padding: 10px 0;
-  background: rgb(46, 49, 51);
+  background-color: var(--app-box-background-color);
 }
 
 .padding-top-left-right-20 {
@@ -95,9 +109,9 @@ a:-webkit-any-link :hover {
   border-bottom-left-radius: 5px;
   width: 85%;
   box-sizing: border-box;
-  background-color: rgb(34, 38, 41);
+  background-color: var(--background-color);
   font-size: 15px;
-  color: rgb(255, 255, 255);
+  color: var(--color);
 }
 
 .add-todo-button {
@@ -122,7 +136,7 @@ a:-webkit-any-link :hover {
   margin-right: 99px;
   text-align: center;
   opacity: 0.5;
-  color: rgb(255, 255, 255);
+  color: var(--color);
 }
 
 .workdesk-img {
@@ -134,7 +148,7 @@ a:-webkit-any-link :hover {
 
 .git-link {
   margin: 10px 0;
-  color: rgb(255, 255, 255);
+  color: var(--color);
   opacity: 0.5;
   text-align: center;
 }
@@ -144,12 +158,12 @@ a:-webkit-any-link :hover {
 }
 
 .todo-item {
-  background-color: rgb(57, 59, 61) !important;
+  background-color: var(--background-color) !important;
   padding: 10px;
   margin: 10px 0 !important;
   box-sizing: border-box;
   font-size: 15px;
-  color: rgb(255, 255, 255);
+  color: var(--color);
   border-radius:5px;
   justify-content:space-between;
 }
@@ -173,8 +187,9 @@ a:-webkit-any-link :hover {
 }
 
 .trash-img {
-  opacity: 0.2;
+  filter: var(--trash-img-filter);
   cursor: pointer;
+  
 }
 
 .trash-img:hover  {
@@ -195,15 +210,15 @@ a:-webkit-any-link :hover {
   margin-bottom: 16px;
   justify-content: space-between;
   display: flex;
-  color: rgb(255, 255, 255);
+  color: var(--color);
   opacity: 0.2 ;
   font-weight: bold;
 }
 
 .hide-show-button {
   background-color: transparent;
-  color: #e7e7e7;
-  border: 2px solid #e7e7e7;
+  color: var(--color);
+  border: 2px solid var(--color);
   border-radius: 4px;
 }
 
@@ -213,7 +228,7 @@ a:-webkit-any-link :hover {
   margin-right: 99px;
   text-align: center;
   opacity: 0.5;
-  color: rgb(255, 255, 255);
+  color: var(--color);
 }
 
 .sleep-read-dark-img {

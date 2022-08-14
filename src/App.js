@@ -1,7 +1,6 @@
 import './App.css';
 import TodoListContainer from './TodoListContainer';
-
-
+import Darkmode from './Darkmode';
 
 function App() {
 
@@ -19,6 +18,7 @@ function App() {
                 <h1 className='App-title'> StickyList </h1>
               </div>
             </a>
+            <Darkmode></Darkmode>
           </div>
 
           <div className='App-box rounded'>
