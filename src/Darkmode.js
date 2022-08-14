@@ -29,8 +29,8 @@ export default function Darkmode() {
     };
 
     return (
-        <div>
-            <FontAwesomeIcon icon={theme === DARK_THEME ? faMoon : faSun} type="button"
+        <div >
+            <FontAwesomeIcon icon={theme === DARK_THEME ? faSun : faMoon} type="button" className='dark-mode-button'
                 id="darkMode"
                 onClick={(e) => switchTheme(e)} />
 

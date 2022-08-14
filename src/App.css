@@ -246,3 +246,10 @@ a:-webkit-any-link :hover {
   height: 143.391px;
   margin: 30px;
 }
+
+.dark-mode-button {
+  background-color: var(--app-box-background-color);
+  
+  padding: 6px;
+  border-radius: 50%;
+}
