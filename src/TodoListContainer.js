@@ -8,6 +8,7 @@ export default function TodoListContainer() {
     const [todos, setTodos] = useState([]);
 
     const [completedItems, setCompletedItems] = useState([]);
+const LOCAL_STORAGE_TODO_ID_KEY = 'todo_id';
 
     const [inputValue, setInputValue] = useState('');
 
@@ -18,6 +19,7 @@ export default function TodoListContainer() {
 
 
     const id = useRef(1)
+    const id = useRef(parseInt(localStorage.getItem(LOCAL_STORAGE_TODO_ID_KEY) ?? 0))
 
     const handleButtonClick = () => {
         addItem();
@@ -96,6 +98,7 @@ export default function TodoListContainer() {
             }, ...todos]);
         setInputValue('');
         id.current++;
+        localStorage.setItem(LOCAL_STORAGE_TODO_ID_KEY, id.current);
     }
 
     const handleShowCompletedItem = () => {
