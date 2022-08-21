@@ -8,7 +8,7 @@ h1 {
   font-weight: bold;
 }
 
-body.dark{
+body.dark {
   --background-color: rgb(34, 38, 41);
   --color: rgb(255, 255, 255);
   --app-box-background-color: rgb(46, 49, 51);
@@ -16,7 +16,7 @@ body.dark{
   --trash-img-filter: brightness(30%);
 }
 
-body.light{
+body.light {
   --background-color: rgb(255, 255, 255);
   --color: rgb(34, 38, 41);
   --app-box-background-color: rgb(242, 245, 247);
@@ -29,6 +29,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color) !important;
+  line-height: 1;
 }
 
 div {
@@ -36,7 +37,7 @@ div {
 }
 
 a:-webkit-any-link {
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 a:-webkit-any-link :hover {
@@ -145,7 +146,6 @@ a:-webkit-any-link :hover {
   width: 264px;
 }
 
-
 .git-link {
   margin: 10px 0;
   color: var(--color);
@@ -164,8 +164,8 @@ a:-webkit-any-link :hover {
   box-sizing: border-box;
   font-size: 15px;
   color: var(--color);
-  border-radius:5px;
-  justify-content:space-between;
+  border-radius: 5px;
+  justify-content: space-between;
 }
 
 .todo-list {
@@ -183,17 +183,15 @@ a:-webkit-any-link :hover {
 .todo-content {
   margin-left: 27.2px;
   padding: 0 !important;
-  
 }
 
 .trash-img {
   filter: var(--trash-img-filter);
   cursor: pointer;
-  
 }
 
-.trash-img:hover  {
-  opacity: 1 ;
+.trash-img:hover {
+  opacity: 1;
 }
 
 .empty-todo-strings {
@@ -202,7 +200,6 @@ a:-webkit-any-link :hover {
   padding-right: 20px;
   color: red;
   font-size: 0.7rem;
-  
 }
 
 .completed-todos-title {
@@ -211,7 +208,7 @@ a:-webkit-any-link :hover {
   justify-content: space-between;
   display: flex;
   color: var(--color);
-  opacity: 0.2 ;
+  opacity: 0.2;
   font-weight: bold;
 }
 
@@ -232,7 +229,6 @@ a:-webkit-any-link :hover {
 }
 
 .sleep-read-dark-img {
-  
 }
 
 .sleep-dark-img {
@@ -249,7 +245,7 @@ a:-webkit-any-link :hover {
 
 .dark-mode-button {
   background-color: var(--app-box-background-color);
-  
   padding: 6px;
   border-radius: 50%;
+  font-size: medium;
 }

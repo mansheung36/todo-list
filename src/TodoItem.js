@@ -14,7 +14,7 @@ export default function TodoItem({ todo, handleDeleteTodo, handleCompletedTodo }
             <div className='col-1'>
 
                 
-                    <img src='	https://stickylist.app/img/trash-light.svg' className='trash-img' onClick={() => { handleDeleteTodo(todo.id) }} />
+                    <img src='	https://stickylist.app/img/trash-light.svg' alt="" className='trash-img' onClick={() => { handleDeleteTodo(todo.id) }} />
            
 
             </div>
