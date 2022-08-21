@@ -29,18 +29,17 @@ export default function TodoListContainer() {
   };
 
   const handleDeleteTodo = (id) => {
-    localStorage.setItem(
-      "todos",
-      JSON.stringify(todos.filter((todo) => todo.id !== id))
-    );
-    setTodos(todos.filter((todo) => todo.id !== id));
+    let newDeleteTodo = todos.filter((todo) => todo.id !== id);
+    localStorage.setItem("todos", JSON.stringify(newDeleteTodo));
+    setTodos(newDeleteTodo);
   };
 
   const handleDeleteCompeleted = (id) => {
-    localStorage.setItem("completedItems", JSON.stringify(completedItems.filter((completedItems) => completedItems.id !== id)));
-    setCompletedItems(
-      completedItems.filter((completedItems) => completedItems.id !== id)
+    let newDeleteCompeleted = completedItems.filter(
+      (completedItems) => completedItems.id !== id
     );
+    localStorage.setItem("completedItems", JSON.stringify(newDeleteCompeleted));
+    setCompletedItems(newDeleteCompeleted);
   };
 
   const handleCompletedTodo = (id) => {
@@ -51,16 +50,13 @@ export default function TodoListContainer() {
       }
     });
 
-    localStorage.setItem(
-      "completedItems",
-      JSON.stringify([completed, ...completedItems])
-    );
-    setCompletedItems([completed, ...completedItems]);
-    localStorage.setItem(
-      "todos",
-      JSON.stringify(todos.filter((todo) => todo.id !== id))
-    );
-    setTodos(todos.filter((todo) => todo.id !== id));
+    let newCompletedTodo = [completed, ...completedItems];
+    localStorage.setItem("completedItems", JSON.stringify(newCompletedTodo));
+    setCompletedItems(newCompletedTodo);
+
+    let newTodosFilter = todos.filter((todo) => todo.id !== id);
+    localStorage.setItem("todos", JSON.stringify(newTodosFilter));
+    setTodos(newTodosFilter);
   };
 
   const handleCompletedItemClick = (id) => {
@@ -70,12 +66,19 @@ export default function TodoListContainer() {
         backwardItem = completedItem;
       }
     });
-    setTodos([backwardItem, ...todos]);
-    localStorage.setItem("todos", JSON.stringify(todos));
-    setCompletedItems(
-      completedItems.filter((completedItem) => completedItem.id !== id)
+
+    let newBackwardItem = [backwardItem, ...todos];
+    localStorage.setItem("todos", JSON.stringify(newBackwardItem));
+    setTodos(newBackwardItem);
+
+    let newCompletedItemsFilter = completedItems.filter(
+      (completedItem) => completedItem.id !== id
     );
-    localStorage.setItem("completedItems", JSON.stringify(completedItems));
+    localStorage.setItem(
+      "completedItems",
+      JSON.stringify(newCompletedItemsFilter)
+    );
+    setCompletedItems(newCompletedItemsFilter);
   };
 
   const handleKeyDown = (e) => {
