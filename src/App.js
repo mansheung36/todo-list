@@ -30,7 +30,7 @@ function App() {
           </div>
 
           <div className='git-link'>
-            Git
+            Pratice reference from: <a href='https://stickylist.app/'>https://stickylist.app/</a>
           </div>
         </div>
 
